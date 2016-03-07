@@ -12,9 +12,9 @@
     $(document).ready(function() { 
 		$('.message').hide();
         
-        $(form).ajaxSubmit({
+        $('#subscribe').ajaxSubmit({
            type:"POST",
-            data:$(form).serialize(),
+            data:$('#subscribe').serialize(),
             url:"email/email-to-db.php",
             success:function(){
                 $('.message').fadeIn();
