@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
 
 $email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 
-$insert=$ql->prepare("INSERT INTO email-list(email) VALUES(:email)");
+$insert=$ql->prepare("INSERT INTO subscribers(email) VALUES(:email)");
 
 $insert->bindParam(':email',$email);
 
