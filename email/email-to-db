@@ -1,0 +1,19 @@
+<?php
+if(isset($_POST['submit])){
+
+$email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+
+$insert=$ql->prepare("INSERT INTO email-list(email) VALUES(:email)");
+
+$insert->bindParam(':email',$email);
+
+if($insert->execute()){
+
+echo "Thanks for Signup";
+} else {
+
+echo "Error Occured while trying to Save, Please Try again later";
+}
+
+}
+?>
