@@ -29,13 +29,13 @@
 			<div class="sun contact-block">
 				<p class="alert-success"></p>
 				<p class="alert-warning"></p>
-				<form id="subscribe" class="newsletter-signup" role="form" action="email/email-to-db.php" method="post">
+				<form id="subscribe" class="newsletter-signup" role="form">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label text-box">
 						<input class="mdl-textfield__input" type="text" id="sample3" >
 						<label class="mdl-textfield__label" for="sample3">insert your email id</label>
 					</div>
 					<div class="btn-submit margin-all">
-						<a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Submit</a>
+						<a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast" id="submit">Submit</a>
 					</div>
 					<div class="success">
 					    Thanks for subscribing. We will keep you updated!
@@ -63,7 +63,7 @@
 <!--<script src="js/material.min.js"></script>-->
 
 <script type="text/javascript">
-		$('#subscribe').click(function(){
+		$('#submit').click(function(){
 			$.ajax({
 			   url: 'email/email-to-db.php',
 			   data: $("#subscribe").serialize(),
