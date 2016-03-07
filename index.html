@@ -61,20 +61,22 @@
 </div>
 
 <!--<script src="js/material.min.js"></script>-->
-<script> 		
-    $(document).ready(function() { 
-		$('.message').hide();
-        
-        $('#subscribe').ajaxSubmit({
-           type:"POST",
-            data:$('#subscribe').serialize(),
-            url:"email/email-to-db.php",
-            success:function(){
-                $('.message').fadeIn();
-            }
-        });
-		  
-        }); 
-</script> 
+
+<script type="text/javascript">
+		$('#subscribe').click(function(){
+			$.ajax({
+			   url: 'email/email-to-db.php',
+			   data: $("#subscribe").serialize(),
+			   type: 'POST',
+			   error: function() {
+				  alert('An error occured, please try again');
+			   },
+			   dataType: 'json',
+			   success: function(data) {
+				  alert('Thank you, We will back in short.');
+			   }
+			});
+		});
+	  </script>
 </body>
 </html>
