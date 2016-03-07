@@ -1,5 +1,8 @@
 <?php
-if(isset($_POST['submit])){
+
+include 'config.php';
+
+if(isset($_POST['submit'])){
 
 $email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 

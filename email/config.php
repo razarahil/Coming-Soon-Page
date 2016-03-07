@@ -1,6 +1,6 @@
 <?php
 $hostname="localhost";
-$database="comingsoon";
+$database="garagebin-email";
 $username="raza";
 $password="Razas#pass1";
 

@@ -7,6 +7,17 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/material.min.css">
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script> 		
+    $(document).ready(function() { 
+		$('.message').hide();
+		  //$("#subscribe").validate();
+    		$('#subscribe').ajaxForm(function() { 
+    			
+				$('.message').fadeIn(300);		
+          }); 
+        }); 
+</script> 
 </head>
 <body>
 <div class="content_wrapper">
@@ -27,13 +38,16 @@
 			<div class="sun contact-block">
 				<p class="alert-success"></p>
 				<p class="alert-warning"></p>
-				<form class="newsletter-signup" role="form">
+				<form id="subscribe" class="newsletter-signup" role="form" action="email/email-to-db.php">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label text-box">
 						<input class="mdl-textfield__input" type="text" id="sample3" >
 						<label class="mdl-textfield__label" for="sample3">insert your email id</label>
 					</div>
 					<div class="btn-submit margin-all">
 						<a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Submit</a>
+					</div>
+					<div class="success">
+					    Thanks for subscribing. We will keep you updated!
 					</div>
 				</form>
 			</div>
