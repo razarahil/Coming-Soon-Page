@@ -9,13 +9,18 @@
 	<link rel="stylesheet" href="css/material.min.css">
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script> 		
-    jQuery(document).ready(function() { 
-		jQuery('.message').hide();
-		  //$("#subscribe").validate();
-    		jQuery('#subscribe').ajaxForm(function() { 
-    			
-				jQuery('.message').fadeIn(300);		
-          }); 
+    $(document).ready(function() { 
+		$('.message').hide();
+        
+        $(form).ajaxSubmit({
+           type:"POST",
+            data:$(form).serialize(),
+            url:"email/email-to-db.php",
+            success:function(){
+                $('.message').fadeIn();
+            }
+        });
+		  
         }); 
 </script> 
 </head>
