@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-if(isset($_POST['submit'])){
+
 
 $email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 
@@ -18,5 +18,5 @@ echo "Thanks for Signup";
 echo "Error Occured while trying to Save, Please Try again later";
 }
 
-}
+
 ?>
