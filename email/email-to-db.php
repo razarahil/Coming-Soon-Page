@@ -3,8 +3,8 @@
 include 'config.php';
 
 
-
-$email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+$email=$_POST['email'];
+$email=filter_var($email,FILTER_SANITIZE_EMAIL);
 
 $insert=$ql->prepare("INSERT INTO subscribers(email) VALUES(:email)");
 
